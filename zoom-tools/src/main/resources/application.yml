@@ -1,1 +1,28 @@
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/zoom?useSSL=false&serverTimezone=PRC
+    username: zoom
+    password: zoom
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    slave:
+      url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=PRC
+      username: test
+      password: test
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    root: info
+  file:
+    name: ./logs/tools.log
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 
